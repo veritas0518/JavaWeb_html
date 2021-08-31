@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.表单的显示</title>
+</head>
+<body>
+    <!--
+    1.什么是表单
+    答：表单就是html页面中，用来收集用户信息的所有元素集合，然后把这些信息发送给服务器。
+
+           **form标签就是表单**
+           <input type="text">      是文件输入框        value属性设置文本框的默认值
+           <input type="password">  是密码输入框        value属性设置文本框的默认值
+
+           <input type="radio">     radio是单选框      name属性可以对其进行分组(这样就只能选一个了)
+           <input type="checkbox">  checkbox是复选     checked="checked"表示默认选中
+
+           <select>标签       是下拉列表框(大的，套在外面的)
+           <option>标签       是下拉列表框中的选项，可以用selected="selected"设置默认选中
+
+           <textarea>标签     表示多行文本输入框(起始标签和结束标签中的内容是默认值)
+              >rows属性   设置可以显示几行的高度
+              >cols属性   设置每行可以显示几个字符宽度
+
+           <input type="reset">    是重置按钮      value属性修改按钮上的文本内容
+           <input type="submit">   是提交按钮      value属性修改按钮上的文本内容
+           <input type="button">   是普通按钮      value属性修改按钮上的文本内容
+
+           <input type="file">     是文件上传域
+           <input type="hidden">   是隐藏域      当我们要发送某些信息，而这些信息不需要用户参与，就可以使用隐藏域。
+                                               （提交的时候会发送给服务器）
+     -->
+    <form>
+      <h1 align="center">用户注册</h1>
+      <table align="center">
+        <tr>
+          <td>用户名称:</td>
+          <td>
+            <input type="text" value="默认值">
+          </td>
+        </tr>
+        <tr>
+          <td>用户密码:</td>
+          <td>
+            <input type="password" value="123">
+          </td>
+        </tr>
+        <tr>
+          <td>确认密码:</td>
+          <td>
+            <input type="password">
+          </td>
+        </tr>
+        <tr>
+          <td>性别</td>
+          <td>
+            <input type="radio" name="sex" checked="checked">男
+            <input type="radio" name="sex">女
+          </td>
+        </tr>
+        <tr>
+          <td>兴趣爱好:</td>
+          <td>
+            <input type="checkbox" checked="checked">JAVA
+            <input type="checkbox">C
+            <input type="checkbox">C++
+            <input type="checkbox">GO
+          </td>
+        </tr>
+        <tr>
+          <td>国籍</td>
+          <td>
+            <select>
+              <option>--请选择国际--</option>
+              <option selected="selected">中国</option>
+              <option>美国</option>
+              <option>日本</option>
+              <option>英国</option>
+              <option>西班牙</option>
+              <option>法国</option>
+              <option>德国</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>自我评价:</td>
+          <td>
+            <textarea rows="10" cols="50">请输入内容</textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="reset" value="请重置"></td>
+          <td align="center"><input type="submit"></td>
+          <td><input type="button" value="再见"></td>
+          <td><input type="file"></td>
+          <td><input type="hidden" value="看的见我吗"></td>
+        </tr>
+      </table>
+    </form>
+
+</body>
+</html>

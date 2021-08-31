@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.表单的显示</title>
+</head>
+<body>
+    <!--
+        一、form标签是表单标签
+          >action属性   设置提交的服务器地址
+          >method属性   设置提交的方式GET(默认值)或POST
+
+        二、按了提交后的分析
+          http://localhost:8080/        服务器地址
+          ?                             分隔符
+          action=login&sex=on           请求参数(表单的信息)
+
+        三、表单提交的时候，数据没有发送给服务器的三种情况:
+            1.表单项没有name属性值，要想发送给服务器就得带上name
+            2.单选、复选(下拉列表中的option标签)都需要添加value属性，以便发送给服务器
+            3.表单项不在提交的form标签中
+
+        GET请求的特点是：
+           1.浏览器地址中的地址是：action属性[+?+请求参数]
+             请求参数的格式是: name=value&name=value (name就是属性值，value就是输入框的信息或下拉框等选择的信息)
+           2.不安全
+           3.它有数据长度的限制
+           get只有一个流，参数附加在url后，地址行显示要传送的信息，大小个数有严格限制且只能是字符串
+
+        POST请求的特点是:
+           1.浏览器地址栏中只有action属性值
+           2.相对于GET请求更安全
+           3.理论上没有数据长度的限制
+
+     -->
+    <form action="http://localhost:8080" method="get">
+      <h1 align="center">用户注册</h1>
+      <table align="center">
+        <tr>
+          <td>用户名称:</td>
+          <td>
+            <input type="text" name="username" value="默认值">
+          </td>
+        </tr>
+        <tr>
+          <td>用户密码:</td>
+          <td>
+            <input type="password" name="password">
+          </td>
+        </tr>
+        <tr>
+          <td>确认密码:</td>
+          <td>
+            <input type="password">
+          </td>
+        </tr>
+        <tr>
+          <td>性别</td>
+          <td>
+            <input type="radio" name="sex" checked="checked" value="boy">男
+            <input type="radio" name="sex" value="girl">女
+          </td>
+        </tr>
+
+        <tr>
+          <td>兴趣爱好:</td>
+          <td>
+            <input name="hobby" type="checkbox" checked="checked" value="JAVA">JAVA
+            <input name="hobby" type="checkbox" value="C">C
+            <input name="hobby" type="checkbox" value="C++">C++
+            <input name="hobby" type="checkbox" value="GO">GO
+          </td>
+        </tr>
+        <tr>
+          <td>国籍</td>
+          <td>
+            <select name="country">
+              <option>--请选择国际--</option>
+              <option selected="selected" value="CN">中国</option>
+              <option value="USA">美国</option>
+              <option value="JP">日本</option>
+              <option value="US">英国</option>
+              <option>西班牙</option>
+              <option>法国</option>
+              <option>德国</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>自我评价:</td>
+          <td>
+            <textarea name="desc" rows="10" cols="50">请输入内容</textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="reset" value="请重置"></td>
+          <td align="center"><input type="submit"></td>
+          <td><input type="button" value="再见"></td>
+          <td><input type="file"></td>
+          <td><input type="hidden" name="action" value="看的见我吗"></td>
+        </tr>
+      </table>
+    </form>
+</body>
+</html>

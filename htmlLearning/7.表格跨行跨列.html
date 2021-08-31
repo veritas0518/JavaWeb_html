@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.表格跨行跨列</title>
+</head>
+<body>
+            <!--
+                colspan      属性设置跨列（横着的被合并）
+                rowspan      属性设置跨行（竖着的被合并）
+            -->
+<table align="center" border="1" width="500" height="500" cellspacing="0">
+    <tr>
+        <th colspan="2">1.1</th>
+<!--   1.1和1.2合并了，就得把1.2删了     -->
+        <th>1.3</th>
+        <th>1.4</th>
+        <th>1.5</th>
+    </tr>
+    <tr>
+        <th rowspan="2">2.1</th>
+        <th>2.2</th>
+        <th>2.3</th>
+        <th>2.4</th>
+        <th>2.5</th>
+    </tr>
+    <tr>
+<!--    2.1和3.1合并了，得删掉3.1    -->
+        <th>3.2</th>
+        <th>3.3</th>
+        <th>3.4</th>
+        <th>3.5</th>
+    </tr>
+    <tr>
+        <th>4.1</th>
+        <th>4.2</th>
+        <th>4.3</th>
+        <th colspan="2" rowspan="2">4.4</th>
+<!--   同理     -->
+    </tr>
+    <tr>
+        <th>5.1</th>
+        <th>5.2</th>
+        <th>5.3</th>
+<!--   同理     -->
+    </tr>
+</table>
+</body>
+</html>
